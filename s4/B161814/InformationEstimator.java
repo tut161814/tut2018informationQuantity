@@ -47,7 +47,7 @@ public class InformationEstimator implements InformationEstimatorInterface{
 	// System.out.println("np="+np+" length="+myTarget.length);
 	double value = Double.MAX_VALUE; // value = mininimum of each "value1".
 
-	for(int p=0; p<np; p++) { // There are 2^(n-1) kinds of partitions.
+	for(int p=0; p<np; p++) { // There are 2^(n-1) kinds of partitions. 
 	    // binary representation of p forms partition.
 	    // for partition {"ab" "cde" "fg"}
 	    // a b c d e f g   : myTarget
