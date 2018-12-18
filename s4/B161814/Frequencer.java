@@ -25,11 +25,13 @@ public class Frequencer implements FrequencerInterface{
         int targetLength = myTarget.length;
         int spaceLength = mySpace.length;
         int count = 0;
+        /*
         if(target == null || targetLength == 0){
             return -1;
         }else if(mySpace == null || spaceLength == 0){
             return 0;
         }
+        */
         for(int start = 0; start<spaceLength; start++) { // Is it OK?
             boolean abort = false;
             for(int i = 0; i<targetLength; i++) {
@@ -37,11 +39,11 @@ public class Frequencer implements FrequencerInterface{
             }
 	    if(abort == false) { count++; }
         }
-	return count;
+        return count;
     }
 
     // I know that here is a potential problem in the declaration.
-    public int subByteFrequency(int start, int end) {
+    public int subByteFrequency(int start, int length) {
 	// Not yet, but it is not currently used by anyone.
 	return -1;
     }
@@ -63,4 +65,11 @@ public class Frequencer implements FrequencerInterface{
 	}
     }
 }	    
-	    
+
+/*
+ subByteFrequencyの引数　length→end
+ TARGETがセットされていない場合やTARGETの長さが0の場合にー1を返さない
+ SPASEがセットされていない場合やSPACEの長さが0の場合に0を返さない
+ subByteFrequencyは全く処理をせず−１を返すのみである
+*/
+

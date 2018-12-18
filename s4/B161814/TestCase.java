@@ -38,8 +38,14 @@ public class TestCase {
         if(target != null){
             myObject.setTarget(target.getBytes());
         }
-        freq = myObject.frequency();
+        int freq = myObject.frequency();
         System.out.print("\"" + target + "\" in \"" + space +"\" appears "+freq+" times. ");
+        if(expected == freq) { System.out.println("OK"); } else {System.out.println("WRONG"); }
+    }
+    
+    public void subByteFrequencyTest(int start, int end, int expected){
+        myObject = new s4.B161814.Frequencer();
+        int freq = myObject.subByteFrequency(start, end);
         if(expected == freq) { System.out.println("OK"); } else {System.out.println("WRONG"); }
     }
     
@@ -51,7 +57,7 @@ public class TestCase {
         if(target != null){
             myObject.setTarget(target.getBytes());
         }
-        value = myObject.estimation();
+        double value = myObject.estimation();
         System.out.println(">" + target + " " + value);
         if(expected == value) { System.out.println("OK"); } else {System.out.println("WRONG"); }
     }
@@ -68,6 +74,7 @@ public class TestCase {
         FrequencerInterfaceTest("", "H", 0);
         FrequencerInterfaceTest(null, "H", 0);
         
+        subByteFrequencyTest(0,3,2);
         
 	}
 	catch(Exception e) {
